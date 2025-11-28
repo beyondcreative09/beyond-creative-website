@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Services – Beyond Creative</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore all digital marketing services offered by Beyond Creative, including SEO, PPC, social media, content, email, automation, CRO, analytics and more." />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg-main: #1b1030;
+      --bg-main-light: #2b1847;
+      --bg-cream: #ffe9d0;
+      --accent: #ffb74d;
+      --accent-2: #ff6ec7;
+      --accent-soft: #f7d2ff;
+      --text-main: #ffffff;
+      --text-muted: #d0c4ff;
+      --text-dark: #261b40;
+      --text-soft-dark: #7962a5;
+      --card-bg: #271741;
+      --radius-pill: 999px;
+      --radius-md: 16px;
+      --radius-lg: 22px;
+      --radius-xl: 28px;
+      --shadow-soft: 0 24px 60px rgba(0, 0, 0, 0.35);
+      --max-width: 1120px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(var(--max-width), 100%);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .section {
+      padding: 3.5rem 0;
+    }
+
+    .section-tight {
+      padding: 2.6rem 0;
+    }
+
+    .section-header {
+      margin-bottom: 2rem;
+    }
+
+    .section-kicker {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #a18ad6;
+      margin-bottom: 0.4rem;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      max-width: 34rem;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .text-muted {
+      color: var(--text-muted);
+    }
+
+    .grid {
+      display: grid;
+      gap: 1.8rem;
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .pill {
+      border-radius: var(--radius-pill);
+      padding: 0.35rem 0.9rem;
+      font-size: 0.75rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.55rem 1.4rem;
+      border-radius: var(--radius-pill);
+      border: none;
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 0.85rem;
+      transition: 0.18s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent-2), var(--accent));
+      color: #1b1030;
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      background: transparent;
+      color: var(--text-main);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.12);
+      transform: translateY(-1px);
+    }
+
+    .btn-soft {
+      background: #f4ecff;
+      color: #6b4ca3;
+      border-radius: var(--radius-pill);
+      padding: 0.45rem 1.1rem;
+      font-size: 0.8rem;
+    }
+
+    .btn-soft:hover {
+      background: #e6dcff;
+      transform: translateY(-1px);
+      box-shadow: 0 8px 18px rgba(72, 51, 124, 0.25);
+    }
+
+    /************************************************************
+    HEADER / NAV
+    ************************************************************/
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(27, 16, 48, 0.94);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      min-width: 0;
+    }
+
+    .logo-img {
+      height: 38px;
+      width: auto;
+    }
+
+    .nav-brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    .nav-brand-name {
+      font-weight: 600;
+      font-size: 1rem;
+      letter-spacing: 0.06em;
+    }
+
+    .nav-brand-tagline {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #b6a4ff;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding-bottom: 0.2rem;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent-2), var(--accent));
+      border-radius: var(--radius-pill);
+      transition: width 0.25s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-links a.active {
+      color: #ffffff;
+      font-weight: 500;
+    }
+
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.85rem;
+    }
+
+    /************************************************************
+    SERVICES HERO
+    ************************************************************/
+    .services-hero {
+      background: radial-gradient(circle at 0 0, #3e1e68, transparent 60%),
+        radial-gradient(circle at 100% 0, #442380, transparent 55%),
+        linear-gradient(180deg, #2b1847 0%, #1b1030 65%);
+      padding: 3.2rem 0 3.6rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .services-hero::before {
+      content: "";
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.12), transparent 60%);
+      top: -80px;
+      left: -80px;
+    }
+
+    .services-hero::after {
+      content: "";
+      position: absolute;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent 60%);
+      right: -120px;
+      top: 50%;
+    }
+
+    .services-hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+      gap: 2.6rem;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .services-pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 1rem;
+    }
+
+    .services-pill {
+      font-size: 0.75rem;
+      padding: 0.35rem 0.9rem;
+      border-radius: var(--radius-pill);
+      background: rgba(0, 0, 0, 0.26);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      color: var(--accent-soft);
+    }
+
+    .services-hero-title {
+      font-size: 2.2rem;
+      line-height: 1.25;
+      margin-bottom: 0.6rem;
+    }
+
+    .services-hero-title span {
+      color: var(--accent);
+    }
+
+    .services-hero-text {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 34rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .services-hero-meta {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.1rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      max-width: 26rem;
+    }
+
+    .services-hero-meta strong {
+      display: block;
+      color: #fff;
+      font-size: 1rem;
+    }
+
+    .services-hero-card {
+      background: rgba(16, 10, 40, 0.85);
+      border-radius: var(--radius-xl);
+      padding: 1.4rem 1.3rem;
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      box-shadow: var(--shadow-soft);
+      font-size: 0.85rem;
+    }
+
+    .services-hero-card-title {
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .services-hero-list {
+      margin-top: 0.5rem;
+      padding-left: 1.1rem;
+      font-size: 0.83rem;
+      color: var(--text-muted);
+    }
+
+    .services-hero-list li {
+      margin-bottom: 0.25rem;
+    }
+
+    /************************************************************
+    CATEGORY OVERVIEW GRID
+    ************************************************************/
+    .services-overview {
+      background: var(--bg-main);
+    }
+
+    .service-category-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.2rem;
+    }
+
+    .service-category-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 1.4rem 1.3rem;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .service-category-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #bfa9ff;
+      margin-bottom: 0.25rem;
+    }
+
+    .service-category-title {
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+      color: #fff;
+    }
+
+    .service-tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.5rem;
+    }
+
+    .service-tag {
+      border-radius: 999px;
+      padding: 0.2rem 0.7rem;
+      font-size: 0.75rem;
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text-muted);
+    }
+
+    /************************************************************
+    DETAILED SERVICE SECTIONS
+    ************************************************************/
+    .service-detail-section {
+      background: var(--bg-main-light);
+    }
+
+    .service-detail-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 2.4rem;
+      align-items: flex-start;
+    }
+
+    .service-detail-block {
+      background: #301a50;
+      border-radius: var(--radius-lg);
+      padding: 1.4rem 1.4rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .service-detail-title {
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+      color: #fff;
+    }
+
+    .service-detail-label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #ccb5ff;
+      margin-bottom: 0.3rem;
+    }
+
+    .service-detail-list {
+      margin-top: 0.6rem;
+      padding-left: 1.1rem;
+      font-size: 0.86rem;
+    }
+
+    .service-detail-list li {
+      margin-bottom: 0.25rem;
+    }
+
+    .service-side-card {
+      background: #25153f;
+      border-radius: var(--radius-lg);
+      padding: 1.2rem 1.2rem;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .service-side-title {
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      font-size: 0.95rem;
+      color: #fff;
+    }
+
+    /************************************************************
+    GRID FOR “MORE SERVICES”
+    ************************************************************/
+    .more-services-section {
+      background: var(--bg-main);
+    }
+
+    .more-services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1.2rem;
+    }
+
+    .more-service-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-md);
+      padding: 1.1rem 1rem;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .more-service-title {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: #fff;
+      margin-bottom: 0.25rem;
+    }
+
+    /************************************************************
+    CTA & FOOTER
+    ************************************************************/
+    .cta-section {
+      background: var(--bg-main-light);
+      padding: 2.8rem 0 3.1rem;
+    }
+
+    .cta-banner {
+      background: #2b1847;
+      border-radius: 26px;
+      padding: 1.9rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.6rem;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+      flex-wrap: wrap;
+    }
+
+    .cta-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    .cta-title span {
+      color: var(--accent);
+    }
+
+    .cta-text {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 0.3rem;
+      max-width: 28rem;
+    }
+
+    footer {
+      background: #120a25;
+      color: var(--text-muted);
+      font-size: 0.78rem;
+      padding: 1.6rem 0 1.8rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    /************************************************************
+    RESPONSIVE
+    ************************************************************/
+    @media (max-width: 960px) {
+      .services-hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-category-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .service-detail-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .more-services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-right {
+        width: 100%;
+        justify-content: flex-end;
+      }
+
+      .services-hero-grid,
+      .service-category-grid,
+      .service-detail-grid,
+      .more-services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-banner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="container nav">
+      <div class="nav-left">
+        <img src="beyond-creative-logo.png" alt="Beyond Creative logo" class="logo-img" />
+        <div class="nav-brand-text">
+          <div class="nav-brand-name">BEYOND CREATIVE</div>
+          <div class="nav-brand-tagline">DIGITAL MARKETING</div>
+        </div>
+      </div>
+
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html" class="active">Services</a>
+        <a href="index.html#process">Process</a>
+        <a href="index.html#clients">Clients</a>
+        <a href="index.html#pricing">Pricing</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+
+      <div class="nav-right">
+        <button class="btn btn-outline">Sign in</button>
+        <button class="btn btn-primary">Get Proposal</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- SERVICES HERO -->
+  <section class="services-hero">
+    <div class="container services-hero-grid">
+      <div>
+        <div class="services-pill-row">
+          <span class="services-pill">All services</span>
+          <span class="services-pill">Full-funnel digital marketing</span>
+        </div>
+
+        <h1 class="services-hero-title">
+          Everything you need to build a <span>profitable</span> growth engine.
+        </h1>
+        <p class="services-hero-text">
+          From performance ads and SEO to email, landing pages, and analytics – Beyond Creative
+          combines creative, strategy, and execution so you don’t have to juggle multiple vendors.
+        </p>
+
+        <div class="services-hero-meta">
+          <div>
+            <strong>End-to-end</strong>
+            Strategy, execution, reporting and optimisation handled by one team.
+          </div>
+          <div>
+            <strong>Channel-agnostic</strong>
+            We pick the right mix of search, social, and lifecycle – not just one platform.
+          </div>
+          <div>
+            <strong>Performance-first</strong>
+            Every deliverable is tied back to revenue, ROAS, or qualified pipeline.
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="services-hero-card">
+          <div class="services-hero-card-title">How we work with services</div>
+          <p>
+            Instead of isolated campaigns, we build a connected system of services that support
+            each other – ads feed email, content boosts SEO, and CRO improves everything.
+          </p>
+          <ul class="services-hero-list">
+            <li>We start with a channel & funnel audit.</li>
+            <li>We prioritise the 2–3 levers that can move fastest.</li>
+            <li>We phase in new services only when they add clear value.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORY OVERVIEW -->
+  <section class="section services-overview">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">Service Categories</div>
+        <h2 class="section-title">A complete stack for modern brands</h2>
+        <p class="section-subtitle">
+          Each category below includes multiple services. You can start with a single track
+          or combine them into a custom plan tailored to your stage of growth.
+        </p>
+      </div>
+
+      <div class="service-category-grid">
+        <article class="service-category-card">
+          <div class="service-category-label">Acquisition</div>
+          <div class="service-category-title">Paid Media & PPC</div>
+          <p>
+            Data-driven campaigns across Google, Meta, and other platforms to acquire new customers
+            at a sustainable cost.
+          </p>
+          <div class="service-tag-row">
+            <span class="service-tag">Google Ads</span>
+            <span class="service-tag">Meta Ads</span>
+            <span class="service-tag">YouTube Ads</span>
+            <span class="service-tag">Retargeting</span>
+          </div>
+        </article>
+
+        <article class="service-category-card">
+          <div class="service-category-label">Visibility</div>
+          <div class="service-category-title">SEO & Content</div>
+          <p>
+            Organic growth through keyword strategy, content, and technical optimisation that
+            compounds over time.
+          </p>
+          <div class="service-tag-row">
+            <span class="service-tag">Technical SEO</span>
+            <span class="service-tag">On-page SEO</span>
+            <span class="service-tag">Blog Strategy</span>
+            <span class="service-tag">Content Clusters</span>
+          </div>
+        </article>
+
+        <article class="service-category-card">
+          <div class="service-category-label">Engagement</div>
+          <div class="service-category-title">Social Media Marketing</div>
+          <p>
+            Organic and paid social strategies that keep your brand visible, relevant, and worth following.
+          </p>
+          <div class="service-tag-row">
+            <span class="service-tag">Instagram</span>
+            <span class="service-tag">Facebook</span>
+            <span class="service-tag">LinkedIn</span>
+            <span class="service-tag">Reels & Shorts</span>
+          </div>
+        </article>
+
+        <article class="service-category-card">
+          <div class="service-category-label">Retention</div>
+          <div class="service-category-title">Email & Automation</div>
+          <p>
+            Lifecycle flows and campaigns that turn first-time buyers into loyal customers.
+          </p>
+          <div class="service-tag-row">
+            <span class="service-tag">Welcome flows</span>
+            <span class="service-tag">Cart recovery</span>
+            <span class="service-tag">Nurture sequences</span>
+            <span class="service-tag">Broadcast campaigns</span>
+          </div>
+        </article>
+
+        <article class="service-category-card">
+          <div class="service-category-label">Conversion</div>
+          <div class="service-category-title">Landing Pages & CRO</div>
+          <p>
+            Pages, funnels, and experiments focused on increasing sign-ups, leads, and revenue per visitor.
+          </p>
+          <div class="service-tag-row">
+            <span class="service-tag">Landing page design</span>
+            <span class="service-tag">A/B testing</span>
+            <span class="service-tag">Form optimisation</span>
+            <span class="service-tag">Offer positioning</span>
+          </div>
+        </article>
+
+        <article class="service-category-card">
+          <div class="service-category-label">Insight</div>
+          <div class="service-category-title">Analytics & Tracking</div>
+          <p>
+            Clean data and clear dashboards so you can see exactly what’s working and what isn’t.
+          </p>
+          <div class="service-tag-row">
+            <span class="service-tag">GA4</span>
+            <span class="service-tag">Pixel setup</span>
+            <span class="service-tag">Attribution</span>
+            <span class="service-tag">Custom reports</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- DETAILED: PAID MEDIA + SEO -->
+  <section class="section-tight service-detail-section" id="paid-media">
+    <div class="container service-detail-grid">
+      <div>
+        <div class="service-detail-block">
+          <div class="service-detail-label">Acquisition</div>
+          <div class="service-detail-title">Paid Media & PPC Management</div>
+          <p>
+            We treat your ad accounts like a live laboratory. Every campaign, ad set, and creative
+            has a clear hypothesis and success metric.
+          </p>
+          <ul class="service-detail-list">
+            <li><strong>Account audits & restructuring</strong> for Google Ads and Meta Ads.</li>
+            <li><strong>Campaign planning</strong> for awareness, consideration, and conversion.</li>
+            <li><strong>Audience strategy</strong> – cold, warm, remarketing, and lookalikes.</li>
+            <li><strong>Creative testing</strong> – hooks, angles, formats, and offers.</li>
+            <li><strong>Bid & budget optimisation</strong> based on real-time performance.</li>
+            <li><strong>Weekly reporting</strong> with insights and clear next actions.</li>
+          </ul>
+        </div>
+      </div>
+
+      <aside>
+        <div class="service-side-card">
+          <div class="service-side-title">Where we run ads</div>
+          <p>We choose channels based on your audience and goals, not trends.</p>
+          <ul class="service-detail-list">
+            <li>Google Search & Performance Max</li>
+            <li>Instagram & Facebook (Meta)</li>
+            <li>YouTube campaigns for awareness</li>
+            <li>LinkedIn for B2B lead generation</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section-tight service-detail-section" id="seo">
+    <div class="container service-detail-grid">
+      <div>
+        <div class="service-detail-block">
+          <div class="service-detail-label">Visibility</div>
+          <div class="service-detail-title">SEO & Content Marketing</div>
+          <p>
+            SEO with us is less about chasing random keywords and more about building a content system
+            that attracts and converts the right visitors.
+          </p>
+          <ul class="service-detail-list">
+            <li><strong>Technical SEO audits</strong> to fix crawl, indexation, and site health issues.</li>
+            <li><strong>Keyword & topic research</strong> focused on search intent and revenue potential.</li>
+            <li><strong>On-page optimisation</strong> (titles, metadata, internal links, schema).</li>
+            <li><strong>Content strategy</strong> – pillar pages, blog clusters, and landing pages.</li>
+            <li><strong>Content briefs & outlines</strong> that your team or ours can execute.</li>
+            <li><strong>Monthly SEO performance reviews</strong> and roadmap updates.</li>
+          </ul>
+        </div>
+      </div>
+
+      <aside>
+        <div class="service-side-card">
+          <div class="service-side-title">Best for</div>
+          <p>Brands that want to reduce dependency on paid ads over time.</p>
+          <ul class="service-detail-list">
+            <li>B2B SaaS and service businesses</li>
+            <li>D2C and e-commerce brands</li>
+            <li>Educational platforms and academies</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- DETAILED: SOCIAL + EMAIL -->
+  <section class="section-tight service-detail-section" id="social">
+    <div class="container service-detail-grid">
+      <div>
+        <div class="service-detail-block">
+          <div class="service-detail-label">Engagement</div>
+          <div class="service-detail-title">Social Media Strategy & Management</div>
+          <p>
+            We help you show up consistently on the right platforms, with content that actually
+            reflects your brand and speaks to your customers.
+          </p>
+          <ul class="service-detail-list">
+            <li><strong>Platform selection</strong> based on your audience and resources.</li>
+            <li><strong>Content pillars & themes</strong> that align with your brand narrative.</li>
+            <li><strong>Monthly content calendars</strong> with posts, hooks, and CTAs.</li>
+            <li><strong>Reels & short-video concepts</strong> for reach and storytelling.</li>
+            <li><strong>Community management guidelines</strong> for comments and DMs.</li>
+          </ul>
+        </div>
+      </div>
+
+      <aside>
+        <div class="service-side-card">
+          <div class="service-side-title">Platforms we support</div>
+          <ul class="service-detail-list">
+            <li>Instagram & Facebook pages</li>
+            <li>LinkedIn company pages</li>
+            <li>YouTube (content strategy)</li>
+          </ul>
+          <p style="margin-top:0.4rem;">
+            We can either provide strategy + templates or fully manage your pages with a fixed content volume.
+          </p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section-tight service-detail-section" id="email">
+    <div class="container service-detail-grid">
+      <div>
+        <div class="service-detail-block">
+          <div class="service-detail-label">Retention</div>
+          <div class="service-detail-title">Email Marketing & Automation</div>
+          <p>
+            Email is where your margins live. We build flows and campaigns that nurture, educate,
+            and bring customers back without heavy discounting.
+          </p>
+          <ul class="service-detail-list">
+            <li><strong>Platform setup</strong> (Klaviyo, Mailchimp, or your existing tool).</li>
+            <li><strong>Core flows</strong>: welcome, onboarding, cart/lead recovery, win-back.</li>
+            <li><strong>Newsletter & campaign planning</strong> for product launches and offers.</li>
+            <li><strong>Segmentation & personalisation</strong> based on behaviour and value.</li>
+            <li><strong>Template design & copy</strong> optimised for mobile and conversions.</li>
+          </ul>
+        </div>
+      </div>
+
+      <aside>
+        <div class="service-side-card">
+          <div class="service-side-title">Great for</div>
+          <ul class="service-detail-list">
+            <li>D2C brands with repeat-purchase potential</li>
+            <li>Course creators and academies</li>
+            <li>Service businesses with lead nurturing cycles</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- MORE SERVICES GRID -->
+  <section class="section more-services-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">More ways we support you</div>
+        <h2 class="section-title">Additional digital marketing services</h2>
+        <p class="section-subtitle">
+          The services below are usually combined with our core offerings to create a complete
+          growth program tailored to your brand.
+        </p>
+      </div>
+
+      <div class="more-services-grid">
+        <article class="more-service-card">
+          <div class="more-service-title">Local SEO & Maps</div>
+          <p>Optimising your Google Business Profile, reviews, and location pages to win local searches.</p>
+        </article>
+
+        <article class="more-service-card">
+          <div class="more-service-title">E-commerce Growth</div>
+          <p>Store audits, product page optimisation, and funnel design for Shopify, WooCommerce, etc.</p>
+        </article>
+
+        <article class="more-service-card">
+          <div class="more-service-title">Brand Positioning</div>
+          <p>Clarifying your audience, offer, and messaging so every channel tells the same story.</p>
+        </article>
+
+        <article class="more-service-card">
+          <div class="more-service-title">Landing Page Design</div>
+          <p>High-converting pages for ads, lead magnets, and launches – designed for speed and clarity.</p>
+        </article>
+
+        <article class="more-service-card">
+          <div class="more-service-title">Conversion Rate Optimisation</div>
+          <p>Audits, hypotheses, and A/B tests that systematically improve conversion rates.</p>
+        </article>
+
+        <article class="more-service-card">
+          <div class="more-service-title">Analytics & Dashboards</div>
+          <p>GA4 setup, pixel configuration, and simple dashboards for marketing + leadership teams.</p>
+        </article>
+
+        <article class="more-service-card">
+          <div class="more-service-title">Consulting & Strategy Sprints</div>
+          <p>Short, intense engagements to fix a specific problem or plan your next 3–6 months.</p>
+        </article>
+
+        <article class="more-service-card">
+          <div class="more-service-title">Creative Direction</div>
+          <p>Guidelines and systems for ad creatives, video, and social that match your brand and goals.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-banner">
+        <div>
+          <div class="cta-title">
+            Not sure which services you actually <span>need</span>?
+          </div>
+          <div class="cta-text">
+            Tell us your monthly budget, your main goal, and your current challenges. We’ll
+            recommend a lean, focused service mix – no fluff, no upsell.
+          </div>
+        </div>
+        <a href="index.html#contact" class="btn btn-primary">Plan My Service Mix</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-bottom">
+      <span>Beyond Creative © 2024 – Services</span>
+      <span>
+        <a href="index.html">Back to Home</a>
+      </span>
+    </div>
+  </footer>
+</body>
+</html>

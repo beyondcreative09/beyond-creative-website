@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pricing – Beyond Creative</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Compare Beyond Creative pricing plans: Starter, Growth, and Scale. Detailed inclusions for SEO, ads, social, email, landing pages, and analytics." />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg-main: #1b1030;
+      --bg-main-light: #2b1847;
+      --bg-cream: #ffe9d0;
+      --accent: #ffb74d;
+      --accent-2: #ff6ec7;
+      --accent-soft: #f7d2ff;
+      --text-main: #ffffff;
+      --text-muted: #d0c4ff;
+      --text-dark: #261b40;
+      --text-soft-dark: #7962a5;
+      --card-bg: #271741;
+      --radius-pill: 999px;
+      --radius-md: 16px;
+      --radius-lg: 22px;
+      --radius-xl: 28px;
+      --shadow-soft: 0 24px 60px rgba(0, 0, 0, 0.35);
+      --max-width: 1120px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(var(--max-width), 100%);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .section {
+      padding: 3.5rem 0;
+    }
+
+    .section-tight {
+      padding: 2.6rem 0;
+    }
+
+    .section-header {
+      margin-bottom: 2rem;
+    }
+
+    .section-kicker {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #a18ad6;
+      margin-bottom: 0.4rem;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      max-width: 34rem;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .text-muted {
+      color: var(--text-muted);
+    }
+
+    .grid {
+      display: grid;
+      gap: 1.8rem;
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .pill {
+      border-radius: var(--radius-pill);
+      padding: 0.35rem 0.9rem;
+      font-size: 0.75rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.55rem 1.4rem;
+      border-radius: var(--radius-pill);
+      border: none;
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 0.85rem;
+      transition: 0.18s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent-2), var(--accent));
+      color: #1b1030;
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      background: transparent;
+      color: var(--text-main);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.12);
+      transform: translateY(-1px);
+    }
+
+    .btn-soft {
+      background: #f4ecff;
+      color: #6b4ca3;
+      border-radius: var(--radius-pill);
+      padding: 0.45rem 1.1rem;
+      font-size: 0.8rem;
+    }
+
+    .btn-soft:hover {
+      background: #e6dcff;
+      transform: translateY(-1px);
+      box-shadow: 0 8px 18px rgba(72, 51, 124, 0.25);
+    }
+
+    /************************************************************
+    HEADER / NAV
+    ************************************************************/
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(27, 16, 48, 0.94);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      min-width: 0;
+    }
+
+    .logo-img {
+      height: 38px;
+      width: auto;
+    }
+
+    .nav-brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    .nav-brand-name {
+      font-weight: 600;
+      font-size: 1rem;
+      letter-spacing: 0.06em;
+    }
+
+    .nav-brand-tagline {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #b6a4ff;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding-bottom: 0.2rem;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent-2), var(--accent));
+      border-radius: var(--radius-pill);
+      transition: width 0.25s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-links a.active {
+      color: #ffffff;
+      font-weight: 500;
+    }
+
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.85rem;
+    }
+
+    /************************************************************
+    PRICING HERO
+    ************************************************************/
+    .pricing-hero {
+      background: radial-gradient(circle at 0 0, #3e1e68, transparent 60%),
+        radial-gradient(circle at 100% 0, #442380, transparent 55%),
+        linear-gradient(180deg, #2b1847 0%, #1b1030 65%);
+      padding: 3.2rem 0 3.6rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pricing-hero::before {
+      content: "";
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.12), transparent 60%);
+      top: -80px;
+      left: -80px;
+    }
+
+    .pricing-hero::after {
+      content: "";
+      position: absolute;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent 60%);
+      right: -120px;
+      top: 50%;
+    }
+
+    .pricing-hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+      gap: 2.6rem;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .pricing-pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 1rem;
+    }
+
+    .pricing-pill {
+      font-size: 0.75rem;
+      padding: 0.35rem 0.9rem;
+      border-radius: var(--radius-pill);
+      background: rgba(0, 0, 0, 0.26);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      color: var(--accent-soft);
+    }
+
+    .pricing-hero-title {
+      font-size: 2.2rem;
+      line-height: 1.25;
+      margin-bottom: 0.6rem;
+    }
+
+    .pricing-hero-title span {
+      color: var(--accent);
+    }
+
+    .pricing-hero-text {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 34rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .pricing-hero-meta {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.1rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      max-width: 26rem;
+    }
+
+    .pricing-hero-meta strong {
+      display: block;
+      color: #fff;
+      font-size: 1rem;
+    }
+
+    .pricing-hero-card {
+      background: rgba(16, 10, 40, 0.85);
+      border-radius: var(--radius-xl);
+      padding: 1.4rem 1.3rem;
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      box-shadow: var(--shadow-soft);
+      font-size: 0.85rem;
+    }
+
+    .pricing-hero-card-title {
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .pricing-hero-list {
+      margin-top: 0.5rem;
+      padding-left: 1.1rem;
+      font-size: 0.83rem;
+      color: var(--text-muted);
+    }
+
+    .pricing-hero-list li {
+      margin-bottom: 0.25rem;
+    }
+
+    /************************************************************
+    MAIN PRICING TABLE
+    ************************************************************/
+    .pricing-main {
+      background: var(--bg-main-light);
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.4rem;
+      margin-top: 2rem;
+    }
+
+    .pricing-card {
+      background: #fdfbff;
+      color: #3b2a4e;
+      border-radius: 24px;
+      padding: 1.8rem 1.5rem;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+      border: 2px solid transparent;
+      position: relative;
+      font-size: 0.85rem;
+    }
+
+    .pricing-card.highlight {
+      border-color: var(--accent-2);
+    }
+
+    .pricing-name {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: #5b3b94;
+    }
+
+    .pricing-tag {
+      position: absolute;
+      top: 1.1rem;
+      right: 1.4rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: var(--radius-pill);
+      font-size: 0.7rem;
+      background: #ffecf7;
+      color: #b91573;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .pricing-monthly {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #3b2a4e;
+    }
+
+    .pricing-note {
+      font-size: 0.78rem;
+      color: #8b74b2;
+    }
+
+    .pricing-rows {
+      margin-top: 0.6rem;
+      border-radius: 18px;
+      background: #f6f1ff;
+      padding: 0.8rem 0.9rem;
+      font-size: 0.78rem;
+      display: grid;
+      gap: 0.4rem;
+    }
+
+    .pricing-row-label {
+      font-weight: 600;
+      color: #5b3b94;
+    }
+
+    .pricing-row-detail {
+      color: #7a629f;
+    }
+
+    .pricing-includes-title {
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-top: 0.8rem;
+      color: #3b2a4e;
+    }
+
+    .pricing-list {
+      margin-top: 0.4rem;
+      padding-left: 1.1rem;
+      font-size: 0.8rem;
+      color: #7d659d;
+    }
+
+    .pricing-list li {
+      margin-bottom: 0.25rem;
+    }
+
+    .pricing-cta-note {
+      margin-top: 0.6rem;
+      font-size: 0.78rem;
+      color: #7d659d;
+    }
+
+    /************************************************************
+    COMPARISON TABLE
+    ************************************************************/
+    .comparison-section {
+      background: var(--bg-main);
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1.6rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .comparison-table thead {
+      background: #241539;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+      padding: 0.7rem 0.6rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      text-align: left;
+    }
+
+    .comparison-table th:nth-child(2),
+    .comparison-table td:nth-child(2),
+    .comparison-table th:nth-child(3),
+    .comparison-table td:nth-child(3),
+    .comparison-table th:nth-child(4),
+    .comparison-table td:nth-child(4) {
+      text-align: center;
+    }
+
+    .comparison-table th {
+      font-weight: 500;
+      color: #fff;
+    }
+
+    .comparison-label {
+      color: #f0e6ff;
+      font-weight: 500;
+    }
+
+    .comparison-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.12rem 0.5rem;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    /************************************************************
+    ADD-ONS SECTION
+    ************************************************************/
+    .addons-section {
+      background: var(--bg-main-light);
+    }
+
+    .addons-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.2rem;
+    }
+
+    .addon-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 1.3rem 1.2rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+    }
+
+    .addon-title {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: #fff;
+      margin-bottom: 0.25rem;
+    }
+
+    .addon-price {
+      font-size: 0.85rem;
+      color: var(--accent-soft);
+      margin-bottom: 0.4rem;
+    }
+
+    /************************************************************
+    FAQ + CTA + FOOTER
+    ************************************************************/
+    .faq-section {
+      background: var(--bg-main);
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 2.4rem;
+      align-items: flex-start;
+    }
+
+    .faq-item {
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      background: #211339;
+      margin-bottom: 0.7rem;
+      overflow: hidden;
+    }
+
+    .faq-toggle {
+      display: none;
+    }
+
+    .faq-label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.85rem 1rem;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    .faq-label span {
+      font-weight: 500;
+    }
+
+    .faq-icon {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.55);
+      font-size: 0.7rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.25s ease;
+    }
+
+    .faq-content {
+      max-height: 0;
+      overflow: hidden;
+      padding: 0 1rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      transition: max-height 0.25s ease, padding 0.25s ease;
+    }
+
+    .faq-toggle:checked + .faq-label .faq-icon {
+      transform: rotate(90deg);
+    }
+
+    .faq-toggle:checked ~ .faq-content {
+      max-height: 260px;
+      padding: 0 1rem 0.8rem 1rem;
+    }
+
+    .cta-section {
+      background: var(--bg-main-light);
+      padding: 2.8rem 0 3.1rem;
+    }
+
+    .cta-banner {
+      background: #2b1847;
+      border-radius: 26px;
+      padding: 1.9rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.6rem;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+      flex-wrap: wrap;
+    }
+
+    .cta-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    .cta-title span {
+      color: var(--accent);
+    }
+
+    .cta-text {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 0.3rem;
+      max-width: 28rem;
+    }
+
+    footer {
+      background: #120a25;
+      color: var(--text-muted);
+      font-size: 0.78rem;
+      padding: 1.6rem 0 1.8rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    /************************************************************
+    RESPONSIVE
+    ************************************************************/
+    @media (max-width: 960px) {
+      .pricing-hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .pricing-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .addons-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-right {
+        width: 100%;
+        justify-content: flex-end;
+      }
+
+      .pricing-grid,
+      .addons-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-banner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="container nav">
+      <div class="nav-left">
+        <img src="beyond-creative-logo.png" alt="Beyond Creative logo" class="logo-img" />
+        <div class="nav-brand-text">
+          <div class="nav-brand-name">BEYOND CREATIVE</div>
+          <div class="nav-brand-tagline">DIGITAL MARKETING</div>
+        </div>
+      </div>
+
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="index.html#process">Process</a>
+        <a href="index.html#clients">Clients</a>
+        <a href="pricing.html" class="active">Pricing</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+
+      <div class="nav-right">
+        <button class="btn btn-outline">Sign in</button>
+        <button class="btn btn-primary">Get Proposal</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- PRICING HERO -->
+  <section class="pricing-hero">
+    <div class="container pricing-hero-grid">
+      <div>
+        <div class="pricing-pill-row">
+          <span class="pricing-pill">Pricing</span>
+          <span class="pricing-pill">Simple, transparent retainers</span>
+        </div>
+        <h1 class="pricing-hero-title">
+          Choose a plan that matches your current
+          <span>stage of growth</span>.
+        </h1>
+        <p class="pricing-hero-text">
+          All plans include strategy, execution, and reporting. We don’t charge extra
+          for “thinking time” – it’s part of the work.
+        </p>
+
+        <div class="pricing-hero-meta">
+          <div>
+            <strong>Flexible</strong>
+            Start with one plan and upgrade as your results scale.
+          </div>
+          <div>
+            <strong>All-in</strong>
+            No surprise fees for “extra calls” or basic reporting.
+          </div>
+          <div>
+            <strong>Aligned</strong>
+            We optimise towards the same KPIs you care about.
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="pricing-hero-card">
+          <div class="pricing-hero-card-title">How pricing works</div>
+          <p>
+            Our retainers are based on the number of channels, complexity of your funnel,
+            and the speed at which you want to move.
+          </p>
+          <ul class="pricing-hero-list">
+            <li>3-month minimum to give experiments time to work.</li>
+            <li>Monthly retainers – no lock-in after the initial period.</li>
+            <li>Ad spend is billed directly on your platforms, not through us.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN PRICING GRID -->
+  <section class="section pricing-main">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">Plans</div>
+        <h2 class="section-title">Starter, Growth, and Scale</h2>
+        <p class="section-subtitle">
+          Use these plans as a starting point. During our strategy call, we’ll customise inclusions
+          based on your goals, budget, and existing capabilities.
+        </p>
+      </div>
+
+      <div class="pricing-grid">
+        <!-- Starter -->
+        <article class="pricing-card">
+          <div class="pricing-name">Starter</div>
+          <div class="pricing-monthly">$500 / month</div>
+          <p class="pricing-note">
+            Ideal for early-stage brands validating one main channel.
+          </p>
+
+          <div class="pricing-rows">
+            <div>
+              <div class="pricing-row-label">Channels</div>
+              <div class="pricing-row-detail">Choose 1: Meta Ads or Google Ads or SEO</div>
+            </div>
+            <div>
+              <div class="pricing-row-label">Call cadence</div>
+              <div class="pricing-row-detail">Monthly strategy review + weekly summary email</div>
+            </div>
+            <div>
+              <div class="pricing-row-label">Ad spend range</div>
+              <div class="pricing-row-detail">Up to $3,000 / month recommended</div>
+            </div>
+          </div>
+
+          <div class="pricing-includes-title">What’s included</div>
+          <ul class="pricing-list">
+            <li>Initial audit of your chosen channel (ads or SEO).</li>
+            <li>Setup or cleanup of one ad account or analytics property.</li>
+            <li>Campaign structure or content plan designed for quick wins.</li>
+            <li>Up to 4 new ad creatives or 2 content pieces per month.</li>
+            <li>Tracking and basic reporting dashboard.</li>
+            <li>Email and chat support during working hours.</li>
+          </ul>
+
+          <p class="pricing-cta-note">
+            Best if you’re just starting to invest in marketing and want a focused, low-risk entry.
+          </p>
+          <button class="btn-soft" style="margin-top:0.8rem;">Start with Starter</button>
+        </article>
+
+        <!-- Growth -->
+        <article class="pricing-card highlight">
+          <span class="pricing-tag">Most Popular</span>
+          <div class="pricing-name">Growth</div>
+          <div class="pricing-monthly">$1000 / month</div>
+          <p class="pricing-note">
+            For brands with traction that want to scale across multiple channels.
+          </p>
+
+          <div class="pricing-rows">
+            <div>
+              <div class="pricing-row-label">Channels</div>
+              <div class="pricing-row-detail">Up to 3: Ads + SEO + Email / Social</div>
+            </div>
+            <div>
+              <div class="pricing-row-label">Call cadence</div>
+              <div class="pricing-row-detail">Bi-weekly growth calls + weekly reports</div>
+            </div>
+            <div>
+              <div class="pricing-row-label">Ad spend range</div>
+              <div class="pricing-row-detail">$3,000 – $15,000 / month recommended</div>
+            </div>
+          </div>
+
+          <div class="pricing-includes-title">What’s included</div>
+          <ul class="pricing-list">
+            <li>Full-funnel strategy across chosen channels.</li>
+            <li>Complete account and tracking audit at the start.</li>
+            <li>Ongoing campaign management (launch, optimise, scale).</li>
+            <li>Up to 10 new ad creatives or content assets per month.</li>
+            <li>Basic lifecycle setup: welcome + one additional flow (email).</li>
+            <li>SEO content roadmap + 2–4 optimised pages per month.</li>
+            <li>Custom reporting dashboard and insights document.</li>
+          </ul>
+
+          <p class="pricing-cta-note">
+            Great for teams that want a dedicated growth partner covering strategy, media, and creative.
+          </p>
+          <button class="btn-primary" style="margin-top:0.8rem;">Pick Growth Plan</button>
+        </article>
+
+        <!-- Scale -->
+        <article class="pricing-card">
+          <div class="pricing-name">Scale</div>
+          <div class="pricing-monthly">$2000+ / month</div>
+          <p class="pricing-note">
+            For brands ready to treat marketing as a core growth engine with aggressive targets.
+          </p>
+
+          <div class="pricing-rows">
+            <div>
+              <div class="pricing-row-label">Channels</div>
+              <div class="pricing-row-detail">Custom mix across ads, SEO, email, social, CRO</div>
+            </div>
+            <div>
+              <div class="pricing-row-label">Call cadence</div>
+              <div class="pricing-row-detail">Weekly calls + async Loom updates as needed</div>
+            </div>
+            <div>
+              <div class="pricing-row-label">Ad spend range</div>
+              <div class="pricing-row-detail">$15,000+ / month or high-volume SEO/lead gen</div>
+            </div>
+          </div>
+
+          <div class="pricing-includes-title">What’s included</div>
+          <ul class="pricing-list">
+            <li>Dedicated “pod”: strategist + performance + creative lead.</li>
+            <li>Custom experimentation roadmap across all key funnels.</li>
+            <li>Always-on campaign management and creative testing.</li>
+            <li>Priority production of ad creatives, pages, and email flows.</li>
+            <li>Conversion rate optimisation (CRO) programme for key pages.</li>
+            <li>Executive-level reporting and quarterly strategy reviews.</li>
+          </ul>
+
+          <p class="pricing-cta-note">
+            Ideal for brands aiming for aggressive month-on-month growth, entering new markets, or preparing for fundraising.
+          </p>
+          <button class="btn-soft" style="margin-top:0.8rem;">Talk About Scale Plan</button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARISON TABLE -->
+  <section class="section comparison-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">Compare Plans</div>
+        <h2 class="section-title">See what’s inside each tier</h2>
+        <p class="section-subtitle">
+          This table gives a quick overview. During our intro call, we’ll suggest the plan that
+          best matches your current setup and goals.
+        </p>
+      </div>
+
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Starter</th>
+            <th>Growth</th>
+            <th>Scale</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="comparison-label">Channels managed</td>
+            <td>1</td>
+            <td>Up to 3</td>
+            <td>Custom mix</td>
+          </tr>
+          <tr>
+            <td class="comparison-label">Strategy & planning</td>
+            <td>Quarterly</td>
+            <td>Monthly</td>
+            <td>Ongoing + quarterly deep dives</td>
+          </tr>
+          <tr>
+            <td class="comparison-label">Ad creative production</td>
+            <td>Up to 4 / month</td>
+            <td>Up to 10 / month</td>
+            <td>Priority queue</td>
+          </tr>
+          <tr>
+            <td class="comparison-label">Email flows</td>
+            <td>Welcome only</td>
+            <td>Welcome + 1 extra</td>
+            <td>Full lifecycle</td>
+          </tr>
+          <tr>
+            <td class="comparison-label">Landing pages</td>
+            <td>Template guidance</td>
+            <td>1 page / quarter</td>
+            <td>Ongoing as needed</td>
+          </tr>
+          <tr>
+            <td class="comparison-label">CRO experiments</td>
+            <td>-</td>
+            <td>Basic (key pages)</td>
+            <td>Structured CRO programme</td>
+          </tr>
+          <tr>
+            <td class="comparison-label">Reporting</td>
+            <td>Monthly summary</td>
+            <td>Dashboard + weekly recap</td>
+            <td>Dashboard + exec view</td>
+          </tr>
+          <tr>
+            <td class="comparison-label">Support</td>
+            <td>Email / chat</td>
+            <td>Email / chat + scheduled calls</td>
+            <td>Priority + Loom updates</td>
+          </tr>
+          <tr>
+            <td class="comparison-label">Best for</td>
+            <td>Early-stage validation</td>
+            <td>Scaling proven offers</td>
+            <td>Aggressive multi-channel growth</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ADD-ONS -->
+  <section class="section addons-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">Add-ons</div>
+        <h2 class="section-title">Optional add-ons to support your plan</h2>
+        <p class="section-subtitle">
+          These add-ons are one-time or short-term projects that can be stacked on top of any
+          plan when you need extra firepower.
+        </p>
+      </div>
+
+      <div class="addons-grid">
+        <article class="addon-card">
+          <div class="addon-title">Landing Page Sprint</div>
+          <div class="addon-price">From $400 (one-time)</div>
+          <p>
+            Strategy, wireframe, copy, and design for a high-converting landing page connected
+            to your main campaign.
+          </p>
+        </article>
+
+        <article class="addon-card">
+          <div class="addon-title">Tracking & Analytics Setup</div>
+          <div class="addon-price">From $350 (one-time)</div>
+          <p>
+            GA4, pixels, events, and basic dashboards so your performance data is trustworthy.
+          </p>
+        </article>
+
+        <article class="addon-card">
+          <div class="addon-title">Audit & Roadmap</div>
+          <div class="addon-price">From $300 (one-time)</div>
+          <p>
+            Deep dive into your current marketing with a written 90-day roadmap you can execute
+            with us or your internal team.
+          </p>
+        </article>
+
+        <article class="addon-card">
+          <div class="addon-title">Email Flow Pack</div>
+          <div class="addon-price">From $450 (one-time)</div>
+          <p>
+            Strategy, copy, and template design for 3–4 core flows: welcome, nurture, recovery,
+            and win-back.
+          </p>
+        </article>
+
+        <article class="addon-card">
+          <div class="addon-title">Creative Direction System</div>
+          <div class="addon-price">From $500 (one-time)</div>
+          <p>
+            Brand-aligned guidelines for ad creatives, social posts, and video scripts your
+            team can follow.
+          </p>
+        </article>
+
+        <article class="addon-card">
+          <div class="addon-title">SEO Content Starter Pack</div>
+          <div class="addon-price">From $400 (one-time)</div>
+          <p>
+            Keyword research and 4–6 content briefs tailored to your audience and offer.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section faq-section">
+    <div class="container">
+      <div class="faq-grid">
+        <div>
+          <div class="section-header">
+            <div class="section-kicker">FAQ</div>
+            <h2 class="section-title">Pricing & plan questions</h2>
+            <p class="section-subtitle">
+              If you’re unsure which plan makes sense, we’ll discuss it on a quick intro call.
+              There’s no pressure to sign on the spot.
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <div class="faq-item">
+            <input type="checkbox" id="faq1" class="faq-toggle" />
+            <label for="faq1" class="faq-label">
+              <span>Is there a minimum commitment?</span>
+              <span class="faq-icon">›</span>
+            </label>
+            <div class="faq-content">
+              We recommend a 3-month minimum so we can set foundations, test properly, and
+              see meaningful results. After that, you can continue month-to-month.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <input type="checkbox" id="faq2" class="faq-toggle" />
+            <label for="faq2" class="faq-label">
+              <span>Do your prices include ad spend?</span>
+              <span class="faq-icon">›</span>
+            </label>
+            <div class="faq-content">
+              No. Our retainers cover strategy, management, and creative. Ad spend is billed
+              directly through your ad platforms so you have full control.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <input type="checkbox" id="faq3" class="faq-toggle" />
+            <label for="faq3" class="faq-label">
+              <span>Can we start with Starter and upgrade later?</span>
+              <span class="faq-icon">›</span>
+            </label>
+            <div class="faq-content">
+              Absolutely. Many clients begin on Starter while we validate messaging and offers,
+              then move to Growth once we’ve found traction.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <input type="checkbox" id="faq4" class="faq-toggle" />
+            <label for="faq4" class="faq-label">
+              <span>Do you offer custom or project-only pricing?</span>
+              <span class="faq-icon">›</span>
+            </label>
+            <div class="faq-content">
+              Yes. For one-time projects like audits, landing pages, or workshop-style strategy
+              sessions, we’ll quote a fixed fee based on scope.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-banner">
+        <div>
+          <div class="cta-title">
+            Not sure which plan fits? <span>Let’s map it out together.</span>
+          </div>
+          <div class="cta-text">
+            Share your current monthly revenue, ad spend (if any), and main goal. We’ll suggest a
+            plan and service mix that makes the most sense – even if that means starting small.
+          </div>
+        </div>
+        <a href="index.html#contact" class="btn btn-primary">Talk About Pricing</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-bottom">
+      <span>Beyond Creative © 2024 – Pricing</span>
+      <span><a href="index.html">Back to Home</a></span>
+    </div>
+  </footer>
+</body>
+</html>

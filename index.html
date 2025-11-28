@@ -1,0 +1,2374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    ===========================================================
+    BEYOND CREATIVE - SINGLE FILE STATIC WEBSITE (HTML + CSS)
+    ===========================================================
+    - No JS (only CSS animations)
+    - All styles are in this <style> block
+    - Designed to be easy to open in VS Code and host on GitHub Pages
+    - Colors: Deep purple, cream, pink/orange highlights
+    - Sections:
+        1.  Global Styles & Variables
+        2.  Layout Helpers & Utilities
+        3.  Typography & Buttons
+        4.  Header / Navigation
+        5.  Hero (Rocket + Planet)
+        6.  Client Marquee
+        7.  Services Grid
+        8.  Process / How We Work
+        9.  Why Choose Us (image + cards)
+        10. Stats / Metrics
+        11. Testimonials
+        12. Case Studies Preview
+        13. FAQ Accordion (pure CSS)
+        14. Pricing Plans
+        15. Final CTA
+        16. Footer with Contact Form
+  -->
+
+  <meta charset="UTF-8" />
+  <title>Beyond Creative – Digital Marketing Agency</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Beyond Creative is a performance-first digital marketing agency that blends bold creatives with sharp strategy to help brands grow online." />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /************************************************************
+    1. ROOT VARIABLES & GLOBAL RESET
+    ************************************************************/
+
+    :root {
+      /* Brand colors */
+      --bg-main: #1b1030;
+      --bg-main-light: #2b1847;
+      --bg-cream: #ffe9d0;
+
+      --accent: #ffb74d;
+      --accent-2: #ff6ec7;
+      --accent-soft: #f7d2ff;
+
+      --brand-deep: #171031;
+      --brand-purple: #43339b;
+
+      /* Text colors */
+      --text-main: #ffffff;
+      --text-muted: #d0c4ff;
+      --text-dark: #261b40;
+      --text-soft-dark: #7962a5;
+
+      /* Card & border */
+      --card-bg: #271741;
+      --card-bg-light: #ffffff;
+      --border-soft: rgba(255, 255, 255, 0.06);
+
+      /* Radii & shadows */
+      --radius-sm: 10px;
+      --radius-md: 16px;
+      --radius-lg: 22px;
+      --radius-xl: 28px;
+      --radius-pill: 999px;
+
+      --shadow-soft: 0 24px 60px rgba(0, 0, 0, 0.35);
+      --shadow-lift: 0 20px 45px rgba(0, 0, 0, 0.28);
+
+      /* Timing & transitions */
+      --dur-fast: 0.18s;
+      --dur-med: 0.25s;
+      --dur-slow: 0.35s;
+      --ease-soft: cubic-bezier(0.22, 0.61, 0.36, 1);
+
+      /* Layout width */
+      --max-width: 1120px;
+    }
+
+    /* Reset */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button {
+      font-family: inherit;
+    }
+
+    /* Simple selection styling */
+    ::selection {
+      background: rgba(255, 182, 193, 0.35);
+      color: #fff;
+    }
+
+    /************************************************************
+    2. LAYOUT HELPERS & UTILITIES
+    ************************************************************/
+
+    .container {
+      width: min(var(--max-width), 100%);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .section {
+      padding: 3.5rem 0;
+    }
+
+    .section-tight {
+      padding: 2.4rem 0;
+    }
+
+    .bg-main {
+      background: var(--bg-main);
+    }
+
+    .bg-main-light {
+      background: var(--bg-main-light);
+    }
+
+    .bg-cream {
+      background: var(--bg-cream);
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .text-left {
+      text-align: left;
+    }
+
+    .text-muted {
+      color: var(--text-muted);
+    }
+
+    .grid {
+      display: grid;
+      gap: 1.8rem;
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .grid-4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .flex {
+      display: flex;
+    }
+
+    .flex-between {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .flex-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .gap-xs {
+      gap: 0.5rem;
+    }
+
+    .gap-sm {
+      gap: 0.75rem;
+    }
+
+    .gap-md {
+      gap: 1rem;
+    }
+
+    .gap-lg {
+      gap: 1.5rem;
+    }
+
+    .mt-xs {
+      margin-top: 0.35rem;
+    }
+
+    .mt-sm {
+      margin-top: 0.75rem;
+    }
+
+    .mt-md {
+      margin-top: 1.25rem;
+    }
+
+    .mt-lg {
+      margin-top: 2rem;
+    }
+
+    .mb-xs {
+      margin-bottom: 0.35rem;
+    }
+
+    .mb-sm {
+      margin-bottom: 0.75rem;
+    }
+
+    .mb-md {
+      margin-bottom: 1.25rem;
+    }
+
+    .mb-lg {
+      margin-bottom: 2rem;
+    }
+
+    .pill {
+      border-radius: var(--radius-pill);
+      padding: 0.35rem 0.9rem;
+      font-size: 0.75rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
+    }
+
+    .shadow-soft {
+      box-shadow: var(--shadow-soft);
+    }
+
+    /************************************************************
+    3. TYPOGRAPHY, BUTTONS, SECTION HEADERS
+    ************************************************************/
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-weight: 600;
+      line-height: 1.25;
+    }
+
+    h1 {
+      font-size: clamp(2.1rem, 3.4vw, 2.8rem);
+    }
+
+    h2 {
+      font-size: 1.6rem;
+    }
+
+    h3 {
+      font-size: 1.1rem;
+    }
+
+    h4 {
+      font-size: 0.95rem;
+    }
+
+    p {
+      font-size: 0.95rem;
+    }
+
+    small {
+      font-size: 0.78rem;
+    }
+
+    /* Section titles */
+
+    .section-kicker {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #a18ad6;
+      margin-bottom: 0.4rem;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      max-width: 32rem;
+    }
+
+    .section-header {
+      margin-bottom: 2rem;
+    }
+
+    .section-header.center {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Buttons */
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.55rem 1.4rem;
+      border-radius: var(--radius-pill);
+      border: none;
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 0.85rem;
+      transition: transform var(--dur-fast) var(--ease-soft),
+        box-shadow var(--dur-fast) var(--ease-soft),
+        background var(--dur-fast) var(--ease-soft),
+        color var(--dur-fast) var(--ease-soft);
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent-2), var(--accent));
+      color: #1b1030;
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      background: transparent;
+      color: var(--text-main);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.12);
+      transform: translateY(-1px);
+    }
+
+    .btn-soft {
+      background: #f4ecff;
+      color: #6b4ca3;
+      border-radius: var(--radius-pill);
+      padding: 0.45rem 1.1rem;
+      font-size: 0.8rem;
+    }
+
+    .btn-soft:hover {
+      background: #e6dcff;
+      transform: translateY(-1px);
+      box-shadow: 0 8px 18px rgba(72, 51, 124, 0.25);
+    }
+
+    /************************************************************
+    4. HEADER / NAVIGATION
+    ************************************************************/
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(27, 16, 48, 0.92);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      min-width: 0;
+    }
+
+    .logo-img {
+      height: 38px;
+      width: auto;
+    }
+
+    .nav-brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    .nav-brand-name {
+      font-weight: 600;
+      font-size: 1rem;
+      letter-spacing: 0.06em;
+    }
+
+    .nav-brand-tagline {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #b6a4ff;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding-bottom: 0.2rem;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent-2), var(--accent));
+      border-radius: var(--radius-pill);
+      transition: width var(--dur-med) var(--ease-soft);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    /************************************************************
+    5. HERO SECTION (ROCKET + PLANET)
+    ************************************************************/
+
+    .hero {
+      background: radial-gradient(circle at 0 0, #3e1e68, transparent 60%),
+        radial-gradient(circle at 100% 0, #442380, transparent 55%),
+        linear-gradient(180deg, #2b1847 0%, #1b1030 65%);
+      padding: 3.5rem 0 4.2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.12), transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero::before {
+      width: 260px;
+      height: 260px;
+      top: -80px;
+      left: -60px;
+    }
+
+    .hero::after {
+      width: 320px;
+      height: 320px;
+      right: -120px;
+      top: 40%;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 2.8rem;
+      align-items: center;
+    }
+
+    .hero-top-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-pill {
+      font-size: 0.75rem;
+      padding: 0.35rem 0.9rem;
+      border-radius: var(--radius-pill);
+      background: rgba(0, 0, 0, 0.26);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      color: var(--accent-soft);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .hero-badge {
+      font-size: 0.75rem;
+      padding: 0.35rem 0.9rem;
+      border-radius: var(--radius-pill);
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      color: #fff;
+      display: inline-flex;
+      align-items: baseline;
+      gap: 0.25rem;
+    }
+
+    .hero-badge strong {
+      font-size: 0.9rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2.1rem, 3.4vw, 2.8rem);
+      line-height: 1.2;
+      margin-bottom: 0.9rem;
+    }
+
+    .hero-title span {
+      color: var(--accent);
+    }
+
+    .hero-subtitle {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 32rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.7rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .hero-meta strong {
+      display: block;
+      font-size: 1rem;
+      color: #fff;
+    }
+
+    /* Hero visual (planet + rocket) */
+
+    .hero-visual {
+      position: relative;
+    }
+
+    .hero-planet {
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 20%, #ffe082, #ff9800 40%, #f06292 80%);
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.55);
+      position: relative;
+      margin-left: auto;
+      overflow: hidden;
+    }
+
+    .hero-orbit-ring {
+      position: absolute;
+      border-radius: 50%;
+      border: 2px dashed rgba(255, 255, 255, 0.4);
+      inset: 16px;
+      opacity: 0.6;
+      animation: orbit 16s linear infinite;
+    }
+
+    .hero-orbit-ring.ring-2 {
+      inset: 40px;
+      opacity: 0.3;
+      animation-duration: 22s;
+    }
+
+    @keyframes orbit {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .hero-cloud {
+      position: absolute;
+      width: 130%;
+      height: 90px;
+      background: #ffe9d0;
+      left: -15%;
+      border-radius: 50% 50% 0 0;
+      box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.2) inset;
+    }
+
+    .hero-cloud-top {
+      bottom: 56px;
+    }
+
+    .hero-cloud-bottom {
+      bottom: 10px;
+    }
+
+    .hero-rocket {
+      position: absolute;
+      bottom: 70px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90px;
+      height: 150px;
+      background: linear-gradient(180deg, #ffffff, #d1c4e9);
+      border-radius: 45px 45px 15px 15px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .hero-window {
+      position: absolute;
+      top: 34px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #e3f2fd, #5c6bc0);
+      border: 4px solid #b39ddb;
+    }
+
+    .hero-rocket::before,
+    .hero-rocket::after {
+      content: "";
+      position: absolute;
+      bottom: 14px;
+      width: 40px;
+      height: 60px;
+      background: linear-gradient(180deg, #ffab40, #ff7043);
+      border-radius: 12px;
+    }
+
+    .hero-rocket::before {
+      left: -32px;
+    }
+
+    .hero-rocket::after {
+      right: -32px;
+    }
+
+    .hero-fire {
+      position: absolute;
+      bottom: -26px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 32px;
+      height: 50px;
+      background: radial-gradient(circle at 50% 0, #fff59d, #ff9800 50%, #ff5722 80%);
+      border-radius: 50% 50% 60% 60%;
+      filter: blur(0.5px);
+      animation: flame 1.1s ease-in-out infinite alternate;
+    }
+
+    @keyframes flame {
+      from {
+        transform: translateX(-50%) scaleY(1);
+        opacity: 0.9;
+      }
+      to {
+        transform: translateX(-50%) scaleY(1.15);
+        opacity: 0.6;
+      }
+    }
+
+    .hero-orbit-dot {
+      position: absolute;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #fff;
+      opacity: 0.6;
+      animation: twinkle 2.2s infinite alternate;
+    }
+
+    .hero-orbit-dot.dot-1 {
+      top: 18%;
+      left: 60%;
+    }
+
+    .hero-orbit-dot.dot-2 {
+      top: 52%;
+      left: 10%;
+      animation-delay: 0.6s;
+    }
+
+    .hero-orbit-dot.dot-3 {
+      top: 68%;
+      right: 14%;
+      animation-delay: 1s;
+    }
+
+    .hero-orbit-dot.dot-4 {
+      top: 12%;
+      right: 8%;
+      animation-delay: 1.5s;
+    }
+
+    @keyframes twinkle {
+      from {
+        transform: scale(1);
+        opacity: 0.3;
+      }
+      to {
+        transform: scale(1.4);
+        opacity: 0.8;
+      }
+    }
+
+    /************************************************************
+    6. CLIENTS SECTION - SCROLLING MARQUEE
+    ************************************************************/
+
+    .section-clients {
+      background: var(--bg-cream);
+      color: #3b2a4e;
+      padding: 3rem 0 3.2rem;
+    }
+
+    .clients-wrap {
+      display: flex;
+      justify-content: space-between;
+      gap: 1.8rem;
+      align-items: flex-start;
+      margin-bottom: 1.8rem;
+      flex-wrap: wrap;
+    }
+
+    .clients-copy {
+      max-width: 30rem;
+    }
+
+    .clients-badge {
+      background: oklab(100% 0 -0.00011);
+      border-radius: 18px;
+      padding: 1rem 1.1rem;
+      box-shadow: 0 18px 45px rgba(161, 137, 185, 0.55);
+      max-width: 240px;
+      text-align: left;
+      font-size: 0.8rem;
+      color: #8a6ea8;
+    }
+
+    .clients-badge span {
+      display: inline-block;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #5b3b94;
+    }
+
+    .client-marquee {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .client-row {
+      display: inline-flex;
+      flex-wrap: nowrap;
+      gap: 0.8rem;
+      animation: scrollClients 26s linear infinite;
+      padding-bottom: 0.4rem;
+    }
+
+    .client-row-clone {
+      animation-delay: -13s;
+    }
+
+    @keyframes scrollClients {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    .client-pill {
+      padding: 0.45rem 1.25rem;
+      border-radius: 999px;
+      background: #fff;
+      font-size: 0.8rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      box-shadow: 0 10px 25px rgba(157, 132, 180, 0.35);
+      white-space: nowrap;
+    }
+
+    .client-pill span.icon {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #ffe082, #ff7043);
+    }
+
+    /************************************************************
+    7. SERVICES GRID
+    ************************************************************/
+
+    .section-services {
+      background: var(--bg-cream);
+      padding: 1.6rem 0 3.3rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1.2rem;
+    }
+
+    .service-card {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      padding: 1.5rem 1.3rem;
+      text-align: left;
+      box-shadow: 0 20px 50px rgba(161, 137, 185, 0.4);
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+      transition: transform var(--dur-fast) var(--ease-soft),
+        box-shadow var(--dur-fast) var(--ease-soft),
+        background var(--dur-fast) var(--ease-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: "";
+      position: absolute;
+      width: 140%;
+      height: 140%;
+      background: radial-gradient(circle at 0 0, rgba(255, 182, 193, 0.15), transparent 60%);
+      top: -40%;
+      left: -40%;
+      opacity: 0;
+      transition: opacity var(--dur-med) var(--ease-soft);
+      pointer-events: none;
+    }
+
+    .service-card:hover::before {
+      opacity: 1;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 26px 60px rgba(96, 75, 137, 0.5);
+    }
+
+    .service-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #e0b3ff, #ff9a9e);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      color: #190c27;
+    }
+
+    .service-title {
+      font-weight: 600;
+      color: #3b2a4e;
+      font-size: 0.95rem;
+    }
+
+    .service-desc {
+      font-size: 0.82rem;
+      color: #8a6ea8;
+      flex-grow: 1;
+    }
+
+    /************************************************************
+    8. PROCESS / HOW WE WORK
+    ************************************************************/
+
+    .section-process {
+      background: var(--bg-main);
+      padding: 3rem 0 3.3rem;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.4rem;
+    }
+
+    .process-card {
+      background: var(--card-bg);
+      border-radius: 18px;
+      padding: 1.4rem 1.3rem;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+      font-size: 0.85rem;
+    }
+
+    .process-step-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      margin-bottom: 0.35rem;
+    }
+
+    .process-badge {
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent-2), var(--accent));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      color: #1b1030;
+    }
+
+    .process-title {
+      font-weight: 600;
+      font-size: 0.98rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .process-list {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 0.4rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .process-list li {
+      padding-left: 1rem;
+      position: relative;
+      margin-bottom: 0.25rem;
+    }
+
+    .process-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--accent-2);
+    }
+
+    /************************************************************
+    9. WHY CHOOSE US (IMAGE + CARDS)
+    ************************************************************/
+
+    .section-why {
+      background: var(--bg-main);
+      padding: 3.2rem 0 3.5rem;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .why-image-wrap {
+      background: var(--bg-main-light);
+      border-radius: var(--radius-xl);
+      padding: 1.2rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .why-image-inner {
+      border-radius: calc(var(--radius-xl) - 6px);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .why-image-inner::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 40%, rgba(18, 10, 36, 0.8));
+      opacity: 0.8;
+      mix-blend-mode: soft-light;
+      pointer-events: none;
+    }
+
+    .why-image-inner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .why-text {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .why-cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.9rem;
+    }
+
+    .why-card {
+      background: var(--card-bg);
+      border-radius: 18px;
+      padding: 1rem 1.1rem;
+      font-size: 0.83rem;
+      color: var(--text-muted);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .why-card-title {
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 0.3rem;
+      font-size: 0.9rem;
+    }
+
+    /************************************************************
+    10. STATS SECTION
+    ************************************************************/
+
+    .section-stats {
+      background: var(--bg-main-light);
+      padding: 2.4rem 0 2.7rem;
+    }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .stat-item h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .stat-item span {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /************************************************************
+    11. TESTIMONIALS
+    ************************************************************/
+
+    .section-testimonials {
+      background: var(--bg-main);
+      padding: 3rem 0 3.3rem;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .testimonial-card {
+      background: var(--card-bg);
+      padding: 1.3rem 1.2rem;
+      border-radius: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+      font-size: 0.8rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+
+    .testimonial-header {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+
+    .avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    }
+
+    .testimonial-name {
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .testimonial-role {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /************************************************************
+    12. CASE STUDIES PREVIEW
+    ************************************************************/
+
+    .section-casestudies {
+      background: var(--bg-main);
+      padding: 3rem 0 3.2rem;
+    }
+
+    .casestudy-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.4rem;
+    }
+
+    .case-card {
+      background: var(--card-bg);
+      border-radius: 18px;
+      padding: 1.1rem 1.1rem 1.2rem;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+      font-size: 0.82rem;
+    }
+
+    .case-tag-row {
+      display: flex;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+    }
+
+    .case-tag {
+      border-radius: 999px;
+      padding: 0.2rem 0.7rem;
+      background: rgba(255, 255, 255, 0.06);
+      font-size: 0.7rem;
+      color: var(--text-muted);
+    }
+
+    .case-title {
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .case-metric-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .case-metric-row strong {
+      color: #fff;
+      font-size: 0.9rem;
+    }
+
+    /************************************************************
+    13. FAQ SECTION (PURE CSS ACCORDION)
+    ************************************************************/
+
+    .section-faq {
+      background: var(--bg-main-light);
+      padding: 3rem 0 3.2rem;
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 2.5rem;
+      align-items: flex-start;
+    }
+
+    .faq-item {
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      background: #211339;
+      margin-bottom: 0.7rem;
+      overflow: hidden;
+    }
+
+    .faq-toggle {
+      display: none;
+    }
+
+    .faq-label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.85rem 1rem;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    .faq-label span {
+      font-weight: 500;
+    }
+
+    .faq-icon {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.55);
+      font-size: 0.7rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform var(--dur-med) var(--ease-soft);
+    }
+
+    .faq-content {
+      max-height: 0;
+      overflow: hidden;
+      padding: 0 1rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      transition: max-height var(--dur-med) var(--ease-soft), padding var(--dur-med) var(--ease-soft);
+    }
+
+    .faq-toggle:checked + .faq-label .faq-icon {
+      transform: rotate(90deg);
+    }
+
+    .faq-toggle:checked ~ .faq-content {
+      max-height: 250px;
+      padding: 0 1rem 0.8rem 1rem;
+    }
+
+    /************************************************************
+    14. PRICING PLANS
+    ************************************************************/
+
+    .section-pricing {
+      background: var(--bg-main-light);
+      padding: 3rem 0 3.5rem;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.4rem;
+      margin-top: 2rem;
+    }
+
+    .pricing-card {
+      background: #fdfbff;
+      color: #3b2a4e;
+      border-radius: 24px;
+      padding: 1.8rem 1.5rem;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+      border: 2px solid transparent;
+      transition: transform var(--dur-fast) var(--ease-soft),
+        box-shadow var(--dur-fast) var(--ease-soft),
+        border-color var(--dur-fast) var(--ease-soft);
+      position: relative;
+    }
+
+    .pricing-card.highlight {
+      border-color: var(--accent-2);
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 28px 70px rgba(0, 0, 0, 0.35);
+    }
+
+    .pricing-name {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: #5b3b94;
+    }
+
+    .pricing-price {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #3b2a4e;
+    }
+
+    .pricing-note {
+      font-size: 0.78rem;
+      color: #8b74b2;
+    }
+
+    .pricing-list {
+      font-size: 0.8rem;
+      color: #7d659d;
+      padding-left: 1.1rem;
+      margin-top: 0.2rem;
+    }
+
+    .pricing-list li {
+      margin-bottom: 0.3rem;
+    }
+
+    .pricing-tag {
+      position: absolute;
+      top: 1.1rem;
+      right: 1.4rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: var(--radius-pill);
+      font-size: 0.7rem;
+      background: #ffecf7;
+      color: #b91573;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /************************************************************
+    15. FINAL CTA STRIP
+    ************************************************************/
+
+    .section-cta {
+      background: var(--bg-main);
+      padding: 2.8rem 0 3rem;
+    }
+
+    .cta-banner {
+      background: #2b1847;
+      border-radius: 26px;
+      padding: 1.9rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.6rem;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+      flex-wrap: wrap;
+    }
+
+    .cta-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    .cta-title span {
+      color: var(--accent);
+    }
+
+    .cta-text {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 0.3rem;
+      max-width: 28rem;
+    }
+
+    /************************************************************
+    16. FOOTER & CONTACT FORM
+    ************************************************************/
+
+    footer {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+    }
+
+    .footer-top {
+      background: #2b1847;
+      padding: 2.6rem 0 2.4rem;
+      box-shadow: 0 -18px 45px rgba(0, 0, 0, 0.6);
+    }
+
+    .footer-top-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1.2fr;
+      gap: 2.4rem;
+      align-items: center;
+    }
+
+    .footer-cta-title {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: #fff;
+    }
+
+    .footer-cta-title span {
+      color: var(--accent);
+    }
+
+    .footer-cta-text {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      max-width: 26rem;
+    }
+
+    .footer-form {
+      display: grid;
+      gap: 0.7rem;
+    }
+
+    .footer-form-row {
+      display: flex;
+      gap: 0.6rem;
+    }
+
+    .footer-form input,
+    .footer-form textarea {
+      flex: 1;
+      padding: 0.6rem 0.8rem;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      background: rgba(12, 6, 32, 0.7);
+      color: #fff;
+      font-size: 0.85rem;
+      outline: none;
+      resize: vertical;
+    }
+
+    .footer-form input::placeholder,
+    .footer-form textarea::placeholder {
+      color: rgba(208, 196, 255, 0.7);
+    }
+
+    .footer-main {
+      background: #120a25;
+      padding: 2.8rem 0 1.8rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1.1fr;
+      gap: 2.4rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.7rem;
+      color: #fff;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .footer-desc {
+      max-width: 18rem;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 0.25rem;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+    }
+
+    .footer-links a:hover {
+      color: #fff;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.8rem;
+      font-size: 0.78rem;
+    }
+
+    .footer-bottom a {
+      color: var(--text-muted);
+    }
+
+    /************************************************************
+    17. RESPONSIVE STYLES
+    ************************************************************/
+
+    @media (max-width: 960px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-visual {
+        order: -1;
+        max-width: 320px;
+        margin: 0 auto 1.8rem;
+      }
+
+      .hero-actions,
+      .hero-meta {
+        justify-content: center;
+      }
+
+      .clients-wrap {
+        flex-direction: column;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-row {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .testimonial-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .casestudy-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .pricing-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .footer-top-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-right {
+        align-self: stretch;
+        justify-content: flex-end;
+        width: 100%;
+      }
+
+      .hero-grid,
+      .services-grid,
+      .stats-row,
+      .testimonial-grid,
+      .casestudy-grid,
+      .pricing-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-form-row {
+        flex-direction: column;
+      }
+
+      .cta-banner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- =========================================================
+       HEADER / NAVIGATION
+       ========================================================= -->
+  <header>
+    <div class="container nav">
+      <!-- Brand / logo -->
+      <div class="nav-left">
+        <!-- Place beyond-creative-logo.png next to this HTML file -->
+        <img src="only image logo .png" alt="Beyond Creative logo" class="logo-img" />
+        <div class="nav-brand-text">
+          <div class="nav-brand-name">BEYOND CREATIVE</div>
+          <div class="nav-brand-tagline">DIGITAL MARKETING</div>
+        </div>
+      </div>
+
+      <!-- Navigation links -->
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="#process">Process</a>
+        <a href="about.html">About us</a>
+        <a href="#clients">Clients</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <!-- Actions -->
+      <div class="nav-right">
+        <button class="btn btn-outline">Sign in</button>
+        <button class="btn btn-primary">Get Proposal</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================
+       HERO SECTION
+       ========================================================= -->
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <!-- Hero text side -->
+      <div>
+        <div class="hero-top-row">
+          <span class="hero-pill">
+            🚀 Performance-first digital marketing
+          </span>
+          <span class="hero-badge">
+            <strong>3.4x</strong> Avg. ROAS
+          </span>
+        </div>
+
+        <h1 class="hero-title">
+          Boost your brand beyond <span>ordinary</span> with
+          <span>Beyond Creative</span>.
+        </h1>
+
+        <p class="hero-subtitle">
+          We blend bold creatives with sharp performance strategy to help brands launch,
+          scale, and dominate their digital space across search, social, and beyond.
+        </p>
+
+        <div class="hero-actions">
+          <button class="btn btn-primary">Book a Free Strategy Call</button>
+          <button class="btn btn-outline">View Case Studies</button>
+        </div>
+
+        <div class="hero-meta">
+          <div>
+            <strong>120+</strong>
+            Brands scaled globally
+          </div>
+          <div>
+            <strong>20,000+</strong>
+            Campaigns launched
+          </div>
+          <div>
+            <strong>10+ Years</strong>
+            Growth experience
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero visual side -->
+      <div class="hero-visual">
+        <div class="hero-planet">
+          <div class="hero-orbit-ring ring-1"></div>
+          <div class="hero-orbit-ring ring-2"></div>
+          <div class="hero-rocket">
+            <div class="hero-window"></div>
+            <div class="hero-fire"></div>
+          </div>
+          <div class="hero-cloud hero-cloud-top"></div>
+          <div class="hero-cloud hero-cloud-bottom"></div>
+        </div>
+        <span class="hero-orbit-dot dot-1"></span>
+        <span class="hero-orbit-dot dot-2"></span>
+        <span class="hero-orbit-dot dot-3"></span>
+        <span class="hero-orbit-dot dot-4"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       CLIENTS SECTION
+       ========================================================= -->
+  <section class="section-clients" id="clients">
+    <div class="container">
+      <div class="clients-wrap">
+        <div class="clients-copy">
+          <div class="section-kicker">Our Clients</div>
+          <h2 class="section-title">Brands that trust Beyond Creative</h2>
+          <p class="section-subtitle">
+            From scrappy startups to established enterprises, we partner with teams that
+            are serious about growth and ready to invest in long-term results.
+          </p>
+        </div>
+        <div class="clients-badge">
+          <span>92%</span>
+          <p>of clients stay with us for at least 12 months because we focus on measurable outcomes and honest communication.</p>
+        </div>
+      </div>
+
+      <div class="client-marquee">
+        <div class="client-row">
+          <div class="client-pill"><span class="icon"></span> Nakoda</div>
+          <div class="client-pill"><span class="icon"></span> Candybox</div>
+          <div class="client-pill"><span class="icon"></span> Inlife</div>
+          <div class="client-pill"><span class="icon"></span> metatrader</div>
+          <div class="client-pill"><span class="icon"></span> signia</div>
+          <div class="client-pill"><span class="icon"></span> wandsys</div>
+          <div class="client-pill"><span class="icon"></span> Greenchilli</div>
+          <div class="client-pill"><span class="icon"></span> urbantea</div>
+          <div class="client-pill"><span class="icon"></span> Adiyogi</div>
+          <div class="client-pill"><span class="icon"></span> Sri Krishna Silks</div>
+          <div class="client-pill"><span class="icon"></span> Khalids</div>
+        </div>
+        <div class="client-row client-row-clone">
+          <div class="client-pill"><span class="icon"></span> Nakoda</div>
+          <div class="client-pill"><span class="icon"></span> Candybox</div>
+          <div class="client-pill"><span class="icon"></span> Inlife</div>
+          <div class="client-pill"><span class="icon"></span> metatrader</div>
+          <div class="client-pill"><span class="icon"></span> signia</div>
+          <div class="client-pill"><span class="icon"></span> wandsys</div>
+          <div class="client-pill"><span class="icon"></span> Greenchilli</div>
+          <div class="client-pill"><span class="icon"></span> urbantea</div>
+          <div class="client-pill"><span class="icon"></span> Adiyogi</div>
+          <div class="client-pill"><span class="icon"></span> Sri Krishna Silks</div>
+          <div class="client-pill"><span class="icon"></span> Khalids</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       SERVICES SECTION
+       ========================================================= -->
+  <section class="section-services" id="services">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">Services</div>
+        <h2 class="section-title">Innovative tactics for measurable results</h2>
+        <p class="section-subtitle">
+          We cover the full funnel – from awareness and acquisition to retention and loyalty –
+          so every touchpoint works together to grow your revenue.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <article class="service-card">
+          <div class="service-icon">🔍</div>
+          <h3 class="service-title">SEO & Content Strategy</h3>
+          <p class="service-desc">
+            Technical audits, keyword strategy, content sprints, and authority building to help
+            you rank and stay visible for the searches that matter most.
+          </p>
+          <button class="btn-soft">Learn More</button>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon">📊</div>
+          <h3 class="service-title">Paid Media & PPC</h3>
+          <p class="service-desc">
+            Performance-driven campaigns on Google, Meta, and other networks, designed to find
+            your ideal customers and scale spend without sacrificing efficiency.
+          </p>
+          <button class="btn-soft">Learn More</button>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon">✉️</div>
+          <h3 class="service-title">Email & Automation</h3>
+          <p class="service-desc">
+            Onboarding flows, nurture sequences, win-back automations, and promotional campaigns
+            that turn subscribers into repeat buyers.
+          </p>
+          <button class="btn-soft">Learn More</button>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon">🎨</div>
+          <h3 class="service-title">Creative Studio</h3>
+          <p class="service-desc">
+            Performance-first ad creatives, landing pages, and brand systems designed to stop the
+            scroll, spark curiosity, and drive conversions.
+          </p>
+          <button class="btn-soft">Learn More</button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PROCESS SECTION
+       ========================================================= -->
+  <section class="section-process" id="process">
+    <div class="container">
+      <div class="section-header center">
+        <div class="section-kicker">Our Process</div>
+        <h2 class="section-title">How we build and scale your growth engine</h2>
+        <p class="section-subtitle">
+          Every engagement starts with understanding your numbers, your customers,
+          and your goals. Then we design a roadmap that balances quick wins with long-term momentum.
+        </p>
+      </div>
+
+      <div class="process-grid">
+        <article class="process-card">
+          <div class="process-step-label">
+            <span class="process-badge">1</span>
+            Discovery & Deep Dive
+          </div>
+          <div class="process-title">Understand your brand and benchmarks</div>
+          <p>
+            We unpack your existing data, tech stack, target markets, and customer journeys to
+            identify the biggest opportunities and blockers.
+          </p>
+          <ul class="process-list">
+            <li>Audit current channels, creatives, and funnels</li>
+            <li>Clarify key KPIs and revenue targets</li>
+            <li>Define your ideal customer profiles</li>
+          </ul>
+        </article>
+
+        <article class="process-card">
+          <div class="process-step-label">
+            <span class="process-badge">2</span>
+            Strategy & Setup
+          </div>
+          <div class="process-title">Design the roadmap and build foundations</div>
+          <p>
+            We map out priorities by quarter, set tracking and measurement, and align campaigns
+            with your sales motion.
+          </p>
+          <ul class="process-list">
+            <li>Channel and budget allocation plan</li>
+            <li>Tracking, analytics, and reporting setup</li>
+            <li>Creative concepts and testing framework</li>
+          </ul>
+        </article>
+
+        <article class="process-card">
+          <div class="process-step-label">
+            <span class="process-badge">3</span>
+            Launch, Learn, Scale
+          </div>
+          <div class="process-title">Run experiments and double down on winners</div>
+          <p>
+            We launch campaigns in controlled experiments, optimise weekly, and reinvest in
+            what proves profitable.
+          </p>
+          <ul class="process-list">
+            <li>Weekly performance reviews and insights</li>
+            <li>Clear action items and next experiments</li>
+            <li>Playbooks documented for repeatable scale</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       WHY CHOOSE US
+       ========================================================= -->
+  <section class="section-why" id="why">
+    <div class="container why-grid">
+      <div class="why-image-wrap">
+        <div class="why-image-inner">
+          <!-- You can replace this URL with your own team photo -->
+          <img
+            src="https://images.pexels.com/photos/1181562/pexels-photo-1181562.jpeg?auto=compress&cs=tinysrgb&w=1200"
+            alt="Beyond Creative team at work"
+          />
+        </div>
+      </div>
+
+      <div>
+        <div class="section-kicker">Why Beyond Creative</div>
+        <h2 class="section-title">Creative brains, performance hearts.</h2>
+        <p class="why-text">
+          We don’t guess. We test, iterate, and optimise relentlessly so every rupee
+          you spend works harder. That means clear strategy, transparent reporting,
+          and campaigns that look good and move the numbers.
+        </p>
+
+        <div class="why-cards">
+          <div class="why-card">
+            <div class="why-card-title">Strategy built for your stage</div>
+            <p>
+              Whether you’re launching, growing, or defending your category, we create a
+              roadmap that matches your goals, resources, and timelines.
+            </p>
+          </div>
+          <div class="why-card">
+            <div class="why-card-title">Creative that actually performs</div>
+            <p>
+              Our design and copy team crafts assets for each audience, platform, and funnel step,
+              so your message lands where it matters most.
+            </p>
+          </div>
+          <div class="why-card">
+            <div class="why-card-title">Radical transparency</div>
+            <p>
+              Clear dashboards, weekly check-ins, and plain-English breakdowns of what’s working,
+              what’s not, and where we go next.
+            </p>
+          </div>
+          <div class="why-card">
+            <div class="why-card-title">Full-funnel support</div>
+            <p>
+              From ads and SEO to landing pages, email, and retention – we help you design a
+              growth engine, not just run isolated campaigns.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       STATS SECTION
+       ========================================================= -->
+  <section class="section-stats">
+    <div class="container stats-row">
+      <div class="stat-item">
+        <h3>10,000+</h3>
+        <span>Leads generated every month</span>
+      </div>
+      <div class="stat-item">
+        <h3>3.4x</h3>
+        <span>Average return on ad spend</span>
+      </div>
+      <div class="stat-item">
+        <h3>50+</h3>
+        <span>Industries served worldwide</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       TESTIMONIALS
+       ========================================================= -->
+  <section class="section-testimonials">
+    <div class="container">
+      <div class="section-header center">
+        <div class="section-kicker">Testimonials</div>
+        <h2 class="section-title">What our clients say</h2>
+        <p class="section-subtitle">
+          Real results, real partnerships. We become an extension of your team,
+          not just another agency on your vendor list.
+        </p>
+      </div>
+
+      <div class="testimonial-grid">
+        <article class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="avatar"></div>
+            <div>
+              <div class="testimonial-name">Michael Lee</div>
+              <div class="testimonial-role">Owner, Local Café Chain</div>
+            </div>
+          </div>
+          <p>
+            “Beyond Creative tripled our online orders within six months. Their team feels like
+            an in-house growth squad that genuinely cares about our brand.”
+          </p>
+        </article>
+
+        <article class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="avatar"></div>
+            <div>
+              <div class="testimonial-name">Jessica Taylor</div>
+              <div class="testimonial-role">Head of Marketing, SaaS</div>
+            </div>
+          </div>
+          <p>
+            “Crystal-clear reporting and bold creative testing. We finally understand where our growth
+            is coming from and which experiments to run next.”
+          </p>
+        </article>
+
+        <article class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="avatar"></div>
+            <div>
+              <div class="testimonial-name">David Smith</div>
+              <div class="testimonial-role">Founder, D2C Brand</div>
+            </div>
+          </div>
+          <p>
+            “They helped us scale from 5 to 7 figures without blowing up our acquisition costs.
+            It’s rare to find a partner that understands both numbers and brand.”
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       CASE STUDIES PREVIEW
+       ========================================================= -->
+  <section class="section-casestudies">
+    <div class="container">
+      <div class="section-header center">
+        <div class="section-kicker">Case Studies</div>
+        <h2 class="section-title">A snapshot of what we’ve shipped</h2>
+        <p class="section-subtitle">
+          Every brand is different, but the patterns of growth repeat. Here are a few examples of how we’ve
+          turned insights into revenue.
+        </p>
+      </div>
+
+      <div class="casestudy-grid">
+        <article class="case-card">
+          <div class="case-tag-row">
+            <span class="case-tag">D2C</span>
+            <span class="case-tag">Paid Media</span>
+          </div>
+          <h3 class="case-title">Scaling a skincare brand from ₹5L to ₹35L / month</h3>
+          <p>
+            Built a structured testing framework on Meta + Google, refreshed creatives weekly,
+            and optimised retention with email flows.
+          </p>
+          <div class="case-metric-row">
+            <div>
+              <strong>7x</strong><br />
+              Revenue growth
+            </div>
+            <div>
+              <strong>-42%</strong><br />
+              CAC reduction
+            </div>
+            <div>
+              <strong>3 months</strong><br />
+              Time to scale
+            </div>
+          </div>
+        </article>
+
+        <article class="case-card">
+          <div class="case-tag-row">
+            <span class="case-tag">B2B</span>
+            <span class="case-tag">SEO & Content</span>
+          </div>
+          <h3 class="case-title">Tripling inbound pipeline for a SaaS startup</h3>
+          <p>
+            Created a content cluster strategy, fixed technical SEO, and launched targeted lead magnets
+            aligned with sales narratives.
+          </p>
+          <div class="case-metric-row">
+            <div>
+              <strong>3.1x</strong><br />
+              Organic sign-ups
+            </div>
+            <div>
+              <strong>+68%</strong><br />
+              Demo-to-close
+            </div>
+            <div>
+              <strong>6 months</strong><br />
+              Execution window
+            </div>
+          </div>
+        </article>
+
+        <article class="case-card">
+          <div class="case-tag-row">
+            <span class="case-tag">Education</span>
+            <span class="case-tag">Full Funnel</span>
+          </div>
+          <h3 class="case-title">Filling batches for an online academy</h3>
+          <p>
+            Combined performance creatives, webinar funnels, nurturing emails, and remarketing campaigns
+            to consistently fill monthly cohorts.
+          </p>
+          <div class="case-metric-row">
+            <div>
+              <strong>95%</strong><br />
+              Seat occupancy
+            </div>
+            <div>
+              <strong>2.8x</strong><br />
+              Ad spend ROI
+            </div>
+            <div>
+              <strong>12 weeks</strong><br />
+              To hit targets
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       FAQ SECTION
+       ========================================================= -->
+  <section class="section-faq">
+    <div class="container">
+      <div class="faq-grid">
+        <div>
+          <div class="section-kicker">FAQ</div>
+          <h2 class="section-title">Answers to common questions</h2>
+          <p class="section-subtitle">
+            Not sure where to start? These answers might help. If you don’t see your question here,
+            just drop us a message and we’ll get back within one business day.
+          </p>
+        </div>
+
+        <div>
+          <div class="faq-item">
+            <input type="checkbox" id="faq1" class="faq-toggle" />
+            <label for="faq1" class="faq-label">
+              <span>What kind of brands do you typically work with?</span>
+              <span class="faq-icon">›</span>
+            </label>
+            <div class="faq-content">
+              We work with e-commerce, SaaS, education, healthcare, and service brands that
+              already have a product-market fit and want to scale their digital revenue in a
+              structured way.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <input type="checkbox" id="faq2" class="faq-toggle" />
+            <label for="faq2" class="faq-label">
+              <span>What is the minimum engagement period?</span>
+              <span class="faq-icon">›</span>
+            </label>
+            <div class="faq-content">
+              Most of our retainers start with a 3–6 month commitment. This gives us enough
+              time to test, learn, and scale – and for you to see meaningful results.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <input type="checkbox" id="faq3" class="faq-toggle" />
+            <label for="faq3" class="faq-label">
+              <span>Do you only manage ads or also create creatives?</span>
+              <span class="faq-icon">›</span>
+            </label>
+            <div class="faq-content">
+              We do both. Our in-house creative team produces static and motion assets designed
+              specifically for performance, aligned with your brand guidelines.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <input type="checkbox" id="faq4" class="faq-toggle" />
+            <label for="faq4" class="faq-label">
+              <span>How do we measure success together?</span>
+              <span class="faq-icon">›</span>
+            </label>
+            <div class="faq-content">
+              At the start of the project, we agree on clear KPIs (revenue, CAC, LTV, ROAS, or
+              pipeline metrics) and align reporting around these numbers. You’ll receive a clear
+              summary every month plus weekly highlights.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PRICING SECTION
+       ========================================================= -->
+  <section class="section-pricing" id="pricing">
+    <div class="container">
+      <div class="section-header center">
+        <div class="section-kicker">Pricing</div>
+        <h2 class="section-title">Plans that grow with your brand</h2>
+        <p class="section-subtitle">
+          Every engagement starts with a strategy call so we can recommend the right
+          mix of services and budget for your goals.
+        </p>
+      </div>
+
+      <div class="pricing-grid">
+        <article class="pricing-card">
+          <div class="pricing-name">Starter</div>
+          <div class="pricing-price">$500 / month</div>
+          <p class="pricing-note">
+            Great for early-stage brands validating channels and offers.
+          </p>
+          <ul class="pricing-list">
+            <li>SEO essentials & technical fixes</li>
+            <li>One performance channel (Meta or Google)</li>
+            <li>Basic email welcome flow</li>
+            <li>Monthly strategy review call</li>
+          </ul>
+          <button class="btn btn-soft" style="margin-top:0.8rem;">Get Started</button>
+        </article>
+
+        <article class="pricing-card highlight">
+          <span class="pricing-tag">Most Popular</span>
+          <div class="pricing-name">Growth</div>
+          <div class="pricing-price">$1000 / month</div>
+          <p class="pricing-note">
+            Ideal for brands with traction that want to scale profitably across channels.
+          </p>
+          <ul class="pricing-list">
+            <li>Multi-channel performance marketing</li>
+            <li>Advanced tracking & analytics setup</li>
+            <li>Ongoing creative production & testing</li>
+            <li>Bi-weekly growth and experimentation calls</li>
+          </ul>
+          <button class="btn btn-primary" style="margin-top:0.8rem;">Talk to Our Team</button>
+        </article>
+
+        <article class="pricing-card">
+          <div class="pricing-name">Scale</div>
+          <div class="pricing-price">$2000+ / month</div>
+          <p class="pricing-note">
+            For brands ready to invest in an embedded growth team and aggressive scaling.
+          </p>
+          <ul class="pricing-list">
+            <li>Dedicated growth pod (strategy + media + creative)</li>
+            <li>Full-funnel CRO & experimentation roadmap</li>
+            <li>Custom dashboards for your leadership team</li>
+            <li>Priority support & same-day responses</li>
+          </ul>
+          <button class="btn btn-soft" style="margin-top:0.8rem;">Book Custom Plan</button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       FINAL CTA STRIP
+       ========================================================= -->
+  <section class="section-cta">
+    <div class="container">
+      <div class="cta-banner">
+        <div>
+          <div class="cta-title">
+            Ready to take your brand <span>beyond ordinary</span>?
+          </div>
+          <div class="cta-text">
+            Share your goals with us and we’ll send a no-fluff, actionable growth outline
+            you can use even if we never work together.
+          </div>
+        </div>
+        <button class="btn btn-primary">Book a Free Strategy Session</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       FOOTER WITH CONTACT FORM
+       ========================================================= -->
+  <footer id="contact">
+    <!-- Contact form area -->
+    <div class="footer-top">
+      <div class="container footer-top-grid">
+        <div>
+          <h2 class="footer-cta-title">
+            Let’s talk about growing <span>Beyond Creative</span> with you.
+          </h2>
+          <p class="footer-cta-text">
+            Tell us a bit about your brand and we’ll come back with a tailored
+            growth plan, timelines, and transparent pricing – usually within one business day.
+          </p>
+        </div>
+        <form class="footer-form">
+          <div class="footer-form-row">
+            <input type="text" placeholder="Your name" required />
+            <input type="email" placeholder="Work email" required />
+          </div>
+          <input type="text" placeholder="Brand / Website" />
+          <textarea rows="4" placeholder="What are you trying to achieve? (e.g. more leads, higher ROAS, new market launch)"></textarea>
+          <button type="submit" class="btn btn-primary footer-submit-btn">
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Footer info area -->
+    <div class="footer-main">
+      <div class="container footer-grid">
+        <div>
+          <div class="footer-logo">
+            <img src="only image logo .png" alt="Beyond Creative logo" class="logo-img" />
+            <div class="nav-brand-text">
+              <div class="nav-brand-name">BEYOND CREATIVE</div>
+              <div class="nav-brand-tagline">DIGITAL MARKETING</div>
+            </div>
+          </div>
+          <p class="footer-desc">
+            Beyond Creative is a digital marketing agency helping brands win attention,
+            loyalty, and revenue with high-impact creative and performance strategy.
+          </p>
+        </div>
+
+        <div>
+          <div class="footer-title">Services</div>
+          <div class="footer-links">
+            <a href="#services">SEO & Content</a>
+            <a href="#services">Paid Media & PPC</a>
+            <a href="#services">Email & Automation</a>
+            <a href="#services">Creative Studio</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-title">Company</div>
+          <div class="footer-links">
+            <a href="#home">About</a>
+            <a href="#clients">Case Studies</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#">Careers</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-title">Contact</div>
+          <div class="footer-links">
+            <span>📍 Chennai, India</span>
+            <span>📞 +91 98765 43210</span>
+            <span>✉️ hello@beyondcreative.in</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <span>Beyond Creative © 2024 – All rights reserved</span>
+        <span>
+          <a href="#">Terms &amp; Conditions</a> ·
+          <a href="#">Privacy Policy</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
